@@ -177,8 +177,8 @@ public class CarBean implements Serializable {
         this.filter = filter;
     }
 
-    public List<String> completeModel(String query) {
-        List<String> result = carService.getModels(query);
+    public List<Car> completeModel(String query) {
+        List<Car> result = carService.getModels(query);
         return result;
     }
 

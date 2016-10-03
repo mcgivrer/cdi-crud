@@ -20,6 +20,7 @@ import org.junit.runner.RunWith;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -219,7 +220,7 @@ public class CrudIt {
     @Test
     @UsingDataSet("car.yml")
     public void shouldGetCarModels(){
-        List<String> models = carService.getModels("po");
+        List<String> models = carService.getModels("po").stream().map(s->s.getModel()).collect(Collectors.toList());
         //porche and Porche274
         assertNotNull(models);
         assertEquals(models.size(),2);

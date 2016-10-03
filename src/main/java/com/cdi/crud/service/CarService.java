@@ -65,7 +65,7 @@ public class CarService extends CrudService<Car> {
         return crud().getCriteria();
     }
 
-    public List<String> getModels(String query) {
+    public List<Car> getModels(String query) {
         return crud().criteria().ilike("model", query, MatchMode.ANYWHERE)
                 .projection(Projections.property("model")).list();
     }

@@ -148,7 +148,7 @@ public class Crud<T extends BaseEntity> implements Serializable {
         return this;
     }
 
-    public Crud projection(Projection projection) {
+    public Crud<T> projection(Projection projection) {
         getCriteria().setProjection(projection);
         return this;
     }
